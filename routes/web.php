@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\PaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,7 @@ Route::get('/', function () {
     return view('confirm');
 });
 
-Route::controller(MailController::class)->group(function() {
+Route::controller(PaymentController::class)->group(function() {
     Route::post('/cek-pembayaran', 'ConfirmPayment');
 });
 
